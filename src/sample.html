@@ -9,9 +9,12 @@
   <body>
     <h1>ToDo アプリ</h1>
     <div id="app">
-      <button type="button" @click="onclickCountUp">Count up</button>
-      <p>{{ count }}</p>
+      <count-up-button @count-up="count += 1"></count-up-button>
+      <div>{{ count }}</div>
     </div>
+    <script type="text/x-template" id="btn-template">
+      <button type="button" @click="$emit('count-up')">COUNT UP</button>
+    </script>
     <script src="sample.js"></script>
   </body>
 </html>
