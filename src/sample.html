@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <title>ToDo アプリ</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sample.css" />
     <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script>
   </head>
   <body>
     <h1>ToDo アプリ</h1>
     <div id="app">
-      <count-up-button @count-up="count += 1"></count-up-button>
-      <div>{{ count }}</div>
+      <button @click="isShow = !isShow">Toggleボタン</button>
+      <transition>
+        <div v-show="isShow">トランジション</div>
+      </transition>
     </div>
-    <script type="text/x-template" id="btn-template">
-      <button type="button" @click="$emit('count-up')">COUNT UP</button>
-    </script>
     <script src="sample.js"></script>
   </body>
 </html>
