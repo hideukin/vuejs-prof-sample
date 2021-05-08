@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ToDo アプリ</title>
+    <link rel="stylesheet" href="sample.css" />
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <h1>ToDo アプリ</h1>
+    <div id="app">
+      <button @click="filterDone = !filterDone">Toggleフィルターボタン</button>
+      <transition-group tag="ul">
+        <li v-for="item in filteredItems" :key="item.title">
+          {{ item.title }}
+        </li>
+      </transition-group>
+    </div>
+    <script src="sample.js"></script>
+  </body>
+</html>
